@@ -40,5 +40,6 @@ This is a simple Flask web application that allows co-workers to vote for their 
       1. Username: snack_user
       1. Password: snack_password
       1. Click “Save” to save your changes. You should now be able to view your database in pgAdmin.
+          - If you encounter any problem connecting pgAdmin to postgreSql [this video was helpful](https://www.youtube.com/watch?v=2BjrT14Heug&t=471s&ab_channel=AcerTech).
 
 That’s it!
