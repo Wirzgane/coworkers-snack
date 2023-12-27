@@ -1,0 +1,23 @@
+/* Make the first element with class "card" glow from right to left with a golden color */
+div.card:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 223, 0, 0.8) 0%, rgba(255, 223, 0, 0) 100%);
+    opacity: 0;
+    animation: glowAnimation 2s infinite alternate;
+    pointer-events: none;
+}
+
+/* Keyframes for the glow animation */
+@keyframes glowAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
