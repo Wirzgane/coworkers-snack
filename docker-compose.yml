@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: app.py
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: snack_db
+      POSTGRES_USER: snack_user
+      POSTGRES_PASSWORD: snack_password
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: db.admin@snack.com  # Change this to your desired email
+      PGADMIN_DEFAULT_PASSWORD: password  # Change this to your desired password
+    ports:
+      - "5050:80"  # Map port 5050 on your host to port 80 in the container
+
+volumes:
+  data:
+
